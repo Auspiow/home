@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LRY's Homepage</title>
+    <style>
+        /* 基础样式 */
+        body {
+            font-family: 'Helvetica', 'Arial', sans-serif;
+            line-height: 1.6;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            color: #333;
+        }
+        
+        header {
+            border-bottom: 1px solid #eee;
+            margin-bottom: 30px;
+        }
+        
+        h1 {
+            color: #2c3e50;
+        }
+        
+        nav a {
+            margin-right: 15px;
+            text-decoration: none;
+            color: #3498db;
+        }
+        
+        .post-list {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .post-item {
+            margin-bottom: 25px;
+            padding-bottom: 15px;
+            border-bottom: 1px dashed #eee;
+        }
+        
+        .post-title {
+            font-size: 1.3em;
+            margin-bottom: 5px;
+        }
+        
+        .post-title a {
+            text-decoration: none;
+            color: #2c3e50;
+        }
+        
+        .post-title a:hover {
+            color: #e74c3c;
+        }
+        
+        .post-date {
+            color: #7f8c8d;
+            font-size: 0.9em;
+        }
+        
+        footer {
+            margin-top: 50px;
+            text-align: center;
+            color: #7f8c8d;
+            font-size: 0.9em;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>LRY's Homepage</h1>
+        <nav>
+            <a href="/">首页</a>
+            <a href="/about.html">关于我</a>
+        </nav>
+    </header>
+    
+    <main>
+        <ul class="post-list">
+            <!-- 文章列表 - 链接指向对应的Markdown生成的HTML页面 -->
+            <li class="post-item">
+                <div class="post-title">
+                    <a href="README.html">我是谁</a>
+                </div>
+                <div class="post-date">2025年3月27日</div>
+                <p>故事的开始总是那么仓促......</p>
+            </li>
+        </ul>
+    </main>
+    
+    <footer>
+        <p>© 2025 LRY's Homepage | 由 GitHub Pages 托管</p>
+    </footer>
+</body>
+</html>
