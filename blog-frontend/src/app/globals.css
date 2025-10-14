@@ -2,7 +2,7 @@
 
 :root {
   --background: #ffffff;
-  --foreground: #171717;
+  --foreground: #053947;
 }
 
 @theme inline {
@@ -17,6 +17,35 @@
     --background: #0a0a0a;
     --foreground: #ededed;
   }
+}
+
+.navbar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem 2rem;
+  background-color: rgb(24, 22, 74);
+  position: sticky;
+  top: 0;
+  z-index: 70;
+}
+
+.nav-links {
+  display: flex;
+  gap: 2rem;
+}
+
+.nav-link {
+  color: #90b4c8; /* text-gray-700 */
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 1.125rem;
+  transition: all 0.3s ease;
+}
+
+.nav-link:hover {
+  color: #f8f9f9; /* text-blue-600 */
+  font-size: 1.2rem;
 }
 
 body {
