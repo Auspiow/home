@@ -1,5 +1,5 @@
 import './globals.css'
-import { Navbar } from './components/Navbar'
+import { Navbar } from '../components/Navbar'
 
 export const metadata = {
   title: 'Auspiow的博客',
@@ -11,11 +11,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang="zh">
       <body>
         <Navbar />
-
-        {/* 页面内容 */}
-        <main className="p-6">{children}</main>
-
-        {/* 页脚 */}
+        <main>{children}</main>
         <footer className="p-4 border-t text-center text-sm text-gray-500">
           © 2025 Auspiow Design. All rights reserved.
         </footer>

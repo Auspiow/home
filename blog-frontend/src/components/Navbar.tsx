@@ -1,6 +1,7 @@
 import { Search, Menu, User } from "lucide-react";
 import { Button } from "./ui/button";
 import { Input } from "./ui/input";
+import Link from "next/link";
 
 export function Navbar() {
   return (
@@ -8,15 +9,14 @@ export function Navbar() {
       <div className="max-w-7xl mx-auto flex items-center justify-between">
         <div className="flex items-center gap-8">
           <div className="flex items-center gap-2">
-            <div className="w-8 h-8 bg-orange-500 rounded"></div>
-            <span className="text-xl">My Travel</span>
+            <Link href="/" className="text-xl">My Travel</Link>
           </div>
           
           <div className="hidden md:flex items-center gap-6">
-            <a href="#" className="hover:text-orange-500 transition-colors">Home</a>
-            <a href="#" className="hover:text-orange-500 transition-colors">About</a>
-            <a href="#" className="hover:text-orange-500 transition-colors">Blog</a>
-            <a href="#" className="hover:text-orange-500 transition-colors">Contact</a>
+            <Link href="/about" className="hover:text-orange-500 transition-colors">关于</Link>
+            <Link href="/article" className="hover:text-orange-500 transition-colors">文章</Link>
+            <Link href="/design" className="hover:text-orange-500 transition-colors">设计</Link>
+            <Link href="/project" className="hover:text-orange-500 transition-colors">项目</Link>
           </div>
         </div>
 
