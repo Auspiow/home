@@ -23,9 +23,9 @@ export function HeroSection() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.3, duration: 0.8 }}
-          className="text-xl md:text-2xl mb-10 text-gray-300"
+          className="text-2xl md:text-2xl mb-10 text-gray-300"
         >
-          And there will be friends at my website
+          我们生活在一个虚幻的世界
         </motion.p>
 
         <motion.div

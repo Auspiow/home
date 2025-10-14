@@ -1,41 +1,74 @@
+"use client";
+
 import { Search, Menu, User } from "lucide-react";
 import { Button } from "./ui/button";
 import { Input } from "./ui/input";
 import Link from "next/link";
+import { useState, useEffect } from "react";
 
 export function Navbar() {
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => setScrolled(window.scrollY > 20);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   return (
-    <nav className="bg-[#1a1a1a] text-white px-6 py-4">
-      <div className="max-w-7xl mx-auto flex items-center justify-between">
+    <nav
+      className={`fixed top-0 left-0 w-full z-40 transition-all duration-500 ${
+        scrolled
+          ? "bg-[#1a1a1a]/90 backdrop-blur-md shadow-lg"
+          : "bg-transparent backdrop-blur-sm"
+      }`}
+    >
+      <div className="max-w-7xl mx-auto flex items-center justify-between px-6 py-4">
         <div className="flex items-center gap-8">
-          <div className="flex items-center gap-2">
-            <Link href="/" className="text-xl">My Travel</Link>
-          </div>
-          
-          <div className="hidden md:flex items-center gap-6">
-            <Link href="/about" className="hover:text-orange-500 transition-colors">关于</Link>
-            <Link href="/article" className="hover:text-orange-500 transition-colors">文章</Link>
-            <Link href="/design" className="hover:text-orange-500 transition-colors">设计</Link>
-            <Link href="/project" className="hover:text-orange-500 transition-colors">项目</Link>
+          <Link
+            href="/"
+            className="text-xl font-semibold tracking-tight hover:text-orange-500 transition-colors"
+          >
+            首页
+          </Link>
+
+          <div className="hidden md:flex items-center gap-6 text-gray-200">
+            {[
+              ["about", "关于"],
+              ["article", "文章"],
+              ["design", "设计"],
+              ["project", "项目"],
+            ].map(([path, label]) => (
+              <Link
+                key={path}
+                href={`/${path}`}
+                className="relative group transition"
+              >
+                <span className="group-hover:text-orange-400 transition-colors">
+                  {label}
+                </span>
+                <span className="absolute left-0 bottom-[-4px] w-0 h-[2px] bg-orange-500 rounded-full transition-all duration-300 group-hover:w-full"></span>
+              </Link>
+            ))}
           </div>
         </div>
 
         <div className="flex items-center gap-4">
-          <div className="hidden lg:flex items-center bg-white/10 rounded-full px-4 py-2 gap-2">
-            <Search className="w-4 h-4 text-gray-400" />
+          <div className="hidden lg:flex items-center bg-white/10 backdrop-blur-md rounded-full px-4 py-2 gap-2 border border-white/20 focus-within:ring-2 focus-within:ring-orange-500/50">
+            <Search className="w-4 h-4 text-gray-300" />
             <Input
               type="text"
               placeholder="Search destinations..."
-              className="bg-transparent border-none outline-none text-sm w-48"
+              className="bg-transparent border-none outline-none text-sm w-48 text-gray-200 placeholder:text-gray-400"
             />
           </div>
-          
-          <div className="flex items-center gap-2">
-            <div className="w-8 h-8 bg-orange-500 rounded-full flex items-center justify-center">
+
+          <div className="flex items-center gap-3">
+            <div className="w-9 h-9 bg-orange-500 rounded-full flex items-center justify-center shadow-md hover:shadow-orange-500/40 transition-shadow">
               <User className="w-4 h-4" />
             </div>
-            <Button variant="ghost" size="icon" className="md:hidden">
-              <Menu className="w-5 h-5" />
+            <Button variant="ghost" size="icon" className="md:hidden text-white">
+              <Menu className="w-6 h-6" />
             </Button>
           </div>
         </div>
