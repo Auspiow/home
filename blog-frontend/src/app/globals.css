@@ -16,6 +16,10 @@
   }
 }
 
+html {
+  overflow-y: scroll;
+}
+
 .navbar {
   display: flex;
   justify-content: center;
@@ -33,7 +37,7 @@
 }
 
 .nav-link {
-  color: #90b4c8; /* text-gray-700 */
+  color: #90b4c8;
   text-decoration: none;
   font-weight: 500;
   font-size: 1.125rem;
@@ -41,7 +45,7 @@
 }
 
 .nav-link:hover {
-  color: #f8f9f9; /* text-blue-600 */
+  color: #f8f9f9;
   font-size: 1.2rem;
 }
 

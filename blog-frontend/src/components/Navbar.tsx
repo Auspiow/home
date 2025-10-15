@@ -34,7 +34,7 @@ export function Navbar() {
             首页
           </Link>
 
-          <div className="hidden md:flex items-center gap-6 text-gray-200">
+          <div className="hidden md:flex items-center gap-6 text-gray-200 text-lg">
             {[
               ["about", "关于"],
               ["article", "文章"],
@@ -62,7 +62,6 @@ export function Navbar() {
           </div>
         </div>
 
-        {/* 右侧：搜索框 + 按钮 */}
         <div className="flex items-center gap-4">
           <div className="hidden lg:flex items-center bg-white/10 backdrop-blur-md rounded-full px-4 py-2 gap-2 border border-white/20 focus-within:ring-2 focus-within:ring-orange-500/50">
             <Search className="w-4 h-4 text-gray-300" />

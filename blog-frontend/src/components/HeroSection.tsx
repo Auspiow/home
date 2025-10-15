@@ -6,7 +6,7 @@ export function HeroSection() {
     <section className="relative h-[900px] flex items-center justify-center bg-cover bg-center overflow-hidden">
       <div
         className="absolute inset-0 bg-cover bg-center"
-        style={{ backgroundImage: `url('/images/hero-background.jpg')` }}
+        style={{ backgroundImage: `url('/images/hero-bg.jpg')` }}
       />
       <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/30 to-black/70 backdrop-blur-[2px]" />
       <div className="relative z-10 text-center text-white px-6 max-w-3xl mx-auto">
