@@ -4,7 +4,7 @@ import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
 import rehypeHighlight from "rehype-highlight";
 import "highlight.js/styles/github-dark.css";
-import "./about.module.css";
+import "./about.css";
 
 export default async function AboutPage() {
   const filePath = path.join(process.cwd(), "src", "content", "about.md");

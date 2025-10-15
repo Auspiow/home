@@ -1,7 +1,7 @@
 .about-page {
   position: relative;
   min-height: 100vh;
-  background-image: url("/images/about-bg.jpg");
+  background-image: url('/images/about-bg.jpg');
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
@@ -25,13 +25,14 @@
 .about-container {
   position: relative;
   z-index: 1;
-  max-width: 800px;
+  max-width: 1000px;
   width: 100%;
   padding: 3rem 2rem;
   background: rgba(255, 255, 255, 0.05);
   border-radius: 1rem;
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
   line-height: 1.8;
+  margin-top: 6rem;
 }
 
 .about-container h1,
@@ -50,7 +51,8 @@
 }
 
 .about-container blockquote {
-  border-left: 4px solid #f59e0b;
+  border-left: 4kl
+  px solid #f59e0b;
   padding-left: 1rem;
   background: rgba(255, 255, 255, 0.08);
   border-radius: 0.5rem;
