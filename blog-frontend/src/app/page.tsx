@@ -4,11 +4,12 @@ export default function Home() {
   return (
     <>
       <HeroSection />
-      <main className="p-12">
-        <h1 className="text-4xl font-bold">欢迎来到我的网站</h1>
-        <p className="mt-4 text-lg text-gray-600">
-          这里是我的个人博客，用于记录学习与项目。
-        </p>
+      <main className="px-6 py-12 text-center">
+      <h1 className="text-4xl font-bold">Welcome</h1>
+      <p className="mt-4 text-gray-600">
+        这里是我的个人博客，用于记录学习与项目。<br />
+        感谢 Next.js 的支持。
+      </p>
       </main>
     </>
   );

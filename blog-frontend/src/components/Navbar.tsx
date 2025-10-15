@@ -5,9 +5,11 @@ import { Button } from "./ui/button";
 import { Input } from "./ui/input";
 import Link from "next/link";
 import { useState, useEffect } from "react";
+import { usePathname } from "next/navigation";
 
 export function Navbar() {
   const [scrolled, setScrolled] = useState(false);
+  const pathname = usePathname();
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 20);
@@ -38,27 +40,35 @@ export function Navbar() {
               ["article", "文章"],
               ["design", "设计"],
               ["project", "项目"],
-            ].map(([path, label]) => (
-              <Link
-                key={path}
-                href={`/${path}`}
-                className="relative group transition"
-              >
-                <span className="group-hover:text-orange-400 transition-colors">
-                  {label}
-                </span>
-                <span className="absolute left-0 bottom-[-4px] w-0 h-[2px] bg-orange-500 rounded-full transition-all duration-300 group-hover:w-full"></span>
-              </Link>
-            ))}
+            ].map(([path, label]) => {
+              const active = pathname === `/${path}`;
+              return (
+                <Link
+                  key={path}
+                  href={`/${path}`}
+                  className={`relative group transition ${
+                    active ? "text-orange-400" : "text-gray-200"
+                  }`}
+                >
+                  <span>{label}</span>
+                  <span
+                    className={`absolute left-0 bottom-[-4px] h-[2px] bg-orange-500 rounded-full transition-all duration-300 ${
+                      active ? "w-full" : "w-0 group-hover:w-full"
+                    }`}
+                  ></span>
+                </Link>
+              );
+            })}
           </div>
         </div>
 
+        {/* 右侧：搜索框 + 按钮 */}
         <div className="flex items-center gap-4">
           <div className="hidden lg:flex items-center bg-white/10 backdrop-blur-md rounded-full px-4 py-2 gap-2 border border-white/20 focus-within:ring-2 focus-within:ring-orange-500/50">
             <Search className="w-4 h-4 text-gray-300" />
             <Input
               type="text"
-              placeholder="Search destinations..."
+              placeholder="Search..."
               className="bg-transparent border-none outline-none text-sm w-48 text-gray-200 placeholder:text-gray-400"
             />
           </div>

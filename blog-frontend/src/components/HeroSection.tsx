@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 
 export function HeroSection() {
   return (
-    <section className="relative h-[800px] flex items-center justify-center bg-cover bg-center overflow-hidden">
+    <section className="relative h-[900px] flex items-center justify-center bg-cover bg-center overflow-hidden">
       <div
         className="absolute inset-0 bg-cover bg-center"
         style={{ backgroundImage: `url('/images/hero-background.jpg')` }}
@@ -34,9 +34,6 @@ export function HeroSection() {
           transition={{ delay: 0.6 }}
           className="flex justify-center gap-4"
         >
-          <button className="px-8 py-3 bg-indigo-600 hover:bg-indigo-700 text-white rounded-lg text-lg font-semibold transition-all shadow-lg hover:shadow-indigo-400/40">
-            Get Started
-          </button>
           <button className="px-8 py-3 bg-transparent border border-gray-300 hover:bg-white/10 rounded-lg text-lg font-semibold transition-all">
             Learn More
           </button>
