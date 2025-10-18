@@ -1,3 +1,5 @@
+export const runtime = "nodejs";
+
 import fs from "fs";
 import path from "path";
 import matter from "gray-matter";
@@ -13,7 +15,6 @@ export default async function ArticleDetailPage({
   params: { slug: string };
 }) {
   const decodedSlug = decodeURIComponent(params.slug);
-
   const filePath = path.join(
     process.cwd(),
     "src",
@@ -29,7 +30,6 @@ export default async function ArticleDetailPage({
     <main className="article-page">
       <div className="article-container">
         <h1>{data.title}</h1>
-
         <ReactMarkdown
           remarkPlugins={[remarkGfm]}
           rehypePlugins={[rehypeHighlight]}

@@ -1,6 +1,0 @@
-name = "blog-frontend"
-compatibility_date = "2024-10-01"
-
-[pages]
-# Cloudflare Pages 入口配置
-build_output_dir = ".vercel/output/static"
